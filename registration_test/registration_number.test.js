@@ -54,4 +54,7 @@ describe("The registration function should take in registration number and displ
     assert.deepEqual(registration_display.filter("All"),["CA 1234", 'CK 1234','CA 1235'])
   })
 
+
+  // Test handlebars
+
 });

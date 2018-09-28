@@ -1,4 +1,6 @@
 // DOM elements
+document.addEventListener('DOMContentLoaded', function(){
+
 var input = document.querySelector(".textbox");
 var addButton = document.querySelector(".addBtn");
 var display = document.querySelector(".displayText");
@@ -56,4 +58,6 @@ select.addEventListener('click', function() {
 resetButton.addEventListener("click", function() {
   localStorage.clear();
   window.location.reload();
+});
+
 });
