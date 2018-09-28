@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+  <script type="text/x-template" class="userTemplate">
+    {{#each}}
+    <div class="display">
+     <ul>
+       {{}}
+     </ul>
+      {{/each}}
+    </div>
+  </script>
 
 </head>
 
@@ -58,10 +67,10 @@
   </div>
 
   <!-- This is the handle bar -->
-<br>
-<br>
+  <br>
+  <br>
 
-<hr class="split">
+  <hr class="split">
 
   <div class="container">
     <div class="registration-header">
@@ -95,14 +104,10 @@
         <div class="col-xs-12">
 
           <div class="well well-sm">
-            <div class="display">
-              {{# each}}
-              <span class="displayText">
-                {{}}
-              </span>
-              {{/each}}
-            </div>
 
+            <span class="displayText">
+
+            </span>
 
           </div>
 
@@ -115,6 +120,21 @@
 </body>
 <script type="text/javascript" src="registration_test/registration_number_factory.js"></script>
 <script type="text/javascript" src="registration_dom.js">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 </html>
