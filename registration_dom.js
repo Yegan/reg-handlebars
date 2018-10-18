@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var templateSource = document.querySelector(".userTemplate").innerHTML;
   // compile the template
   var userTemplate = Handlebars.compile(templateSource);
+  var insertData = document.querySelector('.displayText')
+
   var input = document.querySelector(".textbox");
   var addButton = document.querySelector(".addBtn");
   var display = document.querySelector(".displayText");
@@ -15,26 +17,31 @@ document.addEventListener('DOMContentLoaded', function () {
   var storage = JSON.parse(localStorage.getItem('key'));
   var factory = RegistrationFactory(storage);
 
-  function showRegNumbers(numbers) {
-    display.innerHTML = "";
-    for (var key of numbers) {
-      var li = document.createElement('ul');
-      li.innerHTML = key;
-      display.appendChild(li);
-    }
+  let reg = {
+    number:factory.regMapKeys()
   }
 
-  showRegNumbers(factory.regMapKeys());
+  insertData.innerHTML = userTemplate(reg)
+
+  // showRegNumbers(factory.regMapKeys());
 
   // Add button event listener
   addButton.addEventListener("click", function () {
+    
     var inputFeed = input.value;
     var isValid = factory.checkReg(inputFeed)
     if (isValid) {
       localStorage.setItem('key', JSON.stringify(factory.regMap()));
       window.location.reload();
+     var regList = {
+        list: factory.regMap()
+      }
+      userTemplate(regList)        
     }
+    
     else {
+
+
       message.innerHTML = "Please enter a valid registration number"
       if (inputFeed != isValid) {
       }

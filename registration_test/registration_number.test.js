@@ -57,4 +57,7 @@ describe("The registration function should take in registration number and displ
 
   // Test handlebars
 
+
+  
+
 });
